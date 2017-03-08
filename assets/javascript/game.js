@@ -124,7 +124,7 @@ document.onkeyup = function(event) {
 
 
             lettersGuessed.push(lowerGuess);
-            lettersGuessed = lettersGuessed.sort();
+            lettersGuessed.sort();
             console.log(lettersGuessed);
 
 
@@ -139,7 +139,7 @@ document.onkeyup = function(event) {
             numGuesses = numGuesses - 1;
             $("#guessesRemaining").html("Guesses Remaining: " + numGuesses); //display updated number of guesses
             lettersGuessed.push(lowerGuess);
-            lettersGuessed = lettersGuessed.sort();
+            lettersGuessed.sort();
             console.log(lettersGuessed);
             $("#lettersGuessed").html("Letters Guessed: " + "<br><br><br>" + lettersGuessed.join(" ")); //display updated letters guessed array
         }
