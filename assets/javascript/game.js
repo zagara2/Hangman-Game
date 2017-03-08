@@ -162,7 +162,7 @@ document.onkeyup = function(event) {
     if (numGuesses === 0) { //game over, user loses
     	console.log("it's a loss");
         $("#lastgameOutcome").html("Outcome of Last Game:" + "<br><br><br>"+ "You Lost! Secret word was " + secretword);
-        $("#relevantImg").html("<img src = '" +getCorrespondingImage(imageArray)+"'>");
+        $("#relevantImg").html("<img src = '" +getCorrespondingImage(imageArray)+"'alt = 'secret word image'>");
         gameEnd(); //auto restart game on loss
         // playGame();
         chooseNewWord();
@@ -173,7 +173,7 @@ document.onkeyup = function(event) {
     if (checkForBlanks(secretwordArray) === false) { //game over, user wins
     	console.log("it's a win");
         $("#lastgameOutcome").html("Outcome of Last Game:" + "<br><br><br>"+"You Won! Secret word was " + secretword);
-        $("#relevantImg").html("<img src = '" +getCorrespondingImage(imageArray)+"'>");
+        $("#relevantImg").html("<img src = '" +getCorrespondingImage(imageArray)+"' alt = 'secret word image'>");
         numWins = numWins + 1;
         $("#numWins").html("Wins: " + numWins);
         gameEnd(); //auto restart game on win
