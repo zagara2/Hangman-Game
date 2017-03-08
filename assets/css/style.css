@@ -87,3 +87,127 @@ body {
 	max-width:350px;
 	max-height: 300px;
 }
+
+@media screen and (max-width: 1070px) {
+
+	body {
+	background-image: url("../images/background2.png");
+	
+	
+}
+
+.gamedata1 {
+	background-color: white;
+	width:75%;
+	height:50%;
+	clear:both;
+
+	margin-left:15%;
+	margin-right:15%;
+
+}
+
+.gamedata2{
+	background-color:white;
+	width:75%;
+	height:50%;
+	clear:both;
+
+	margin-left:15%;
+	margin-right:15%;
+}
+
+#bigtitle img {
+	height:50%;
+	width:75%;
+	clear:both;
+	margin-left:15%;
+	margin-top:30px;
+	margin-right:20%;
+
+}
+
+#headingtext {
+	margin-left:auto;
+	margin-right:auto;
+	font-size:100px;
+	letter-spacing: 10px;
+	text-align:center;
+	background:white;
+	
+
+}
+
+#pak1 {
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	background:white;
+
+	}
+
+#pak2 {
+	margin-left:auto;
+	margin-right:auto;
+	text-align:center;
+	background:white;
+
+	}
+
+	#relevantImg img {
+	
+	max-width:50%;
+	max-height: 50%;
+}
+
+}
+
+@media screen and (max-width: 680px) {
+
+	#headingtext {
+	margin-left:auto;
+	margin-right:auto;
+	font-size:70px;
+	letter-spacing: 10px;
+	text-align:center;
+	
+
+}
+
+@media screen and (max-width: 520px) {
+
+	#headingtext {
+	margin-left:auto;
+	margin-right:auto;
+	font-size:50px;
+	letter-spacing: 10px;
+	text-align:center;
+	
+
+}
+
+@media screen and (max-width: 400px) {
+
+	#headingtext {
+	margin-left:auto;
+	margin-right:auto;
+	font-size:40px;
+	letter-spacing: 10px;
+	text-align:center;
+	
+
+}
+
+@media screen and (max-width: 350px) {
+
+	#headingtext {
+	margin-left:auto;
+	margin-right:auto;
+	font-size:30px;
+	letter-spacing: 10px;
+	text-align:center;
+	
+
+}
+
+	}
