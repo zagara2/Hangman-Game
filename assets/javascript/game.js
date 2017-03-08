@@ -13,15 +13,15 @@ var imageArray = ["assets/images/vespa.png", "assets/images/takkun.jpg", "assets
 
 //get a random word from the posible choices
 function getWord(myArray) {
-	secretWordIndex  = Math.floor(Math.random() * myArray.length);
+    secretWordIndex = Math.floor(Math.random() * myArray.length);
     //var rand = myArray[Math.floor(Math.random() * myArray.length)];
     var rand = myArray[secretWordIndex];
     return rand;
 }
 
 function getCorrespondingImage(myArray) {
-	var myimg = myArray[secretWordIndex];
-	return myimg;
+    var myimg = myArray[secretWordIndex];
+    return myimg;
 
 }
 
@@ -49,9 +49,9 @@ function checkForBlanks(myArray) {
 }
 
 function chooseNewWord() {
-secretword = getWord(possibleWords);
-        secretwordArray = generateBlanks(secretword);
-        $("#currentWord").html("Current Word: " + "<br> <br> <br>" + secretwordArray.join(" "));
+    secretword = getWord(possibleWords);
+    secretwordArray = generateBlanks(secretword);
+    $("#currentWord").html("Current Word: " + "<br> <br> <br>" + secretwordArray.join(" "));
 }
 // game init
 //     ((player moves))
@@ -73,14 +73,14 @@ secretword = getWord(possibleWords);
 
 // function playGame() {
 
-	// if (GAME_STATE === false) {
- //        secretword = getWord(possibleWords);
- //        secretwordArray = generateBlanks(secretword);
- //        $("#currentWord").html("Current Word: " + "<br>" + secretwordArray.join(" "));
- //        GAME_STATE = true;
+// if (GAME_STATE === false) {
+//        secretword = getWord(possibleWords);
+//        secretwordArray = generateBlanks(secretword);
+//        $("#currentWord").html("Current Word: " + "<br>" + secretwordArray.join(" "));
+//        GAME_STATE = true;
 
 
- //    }
+//    }
 
 
 //when user presses a key:
@@ -98,56 +98,53 @@ document.onkeyup = function(event) {
         document.getElementById('advicesong').play();
 
 
-    }
+    } else if (GAME_STATE === true) {
 
+        var userGuess = event.key;
+        var lowerGuess = userGuess.toLowerCase();
+        console.log(lowerGuess);
+        console.log(checkForBlanks(secretwordArray));
+        if (alphabet.indexOf(lowerGuess) > -1 && lettersGuessed.indexOf(lowerGuess) === -1 && numGuesses > 0 && checkForBlanks(secretwordArray) === true) { //only does game stuff if the key pressed is an alphabet key that has not already been guessed, and the user still has guesses left, and there are still blanks in the secret word array
+            if (secretword.indexOf(lowerGuess) > -1) { //if the guessed letter is in the secret word
+                console.log("yes");
+                console.log(secretword);
+                console.log(secretword[0]);
+                console.log(secretwordArray);
+                for (i = 0; i < secretword.length; i++) {
+                    if (secretword[i] === lowerGuess) {
+                        console.log(secretword[i]);
+                        secretwordArray[i] = lowerGuess; //replace spaces in array of blanks with the letter
+                        console.log(secretwordArray);
+                    }
 
-    else if (GAME_STATE === true) {
-
-    var userGuess = event.key;
-    var lowerGuess = userGuess.toLowerCase();
-    console.log(lowerGuess);
-    console.log(checkForBlanks(secretwordArray));
-    if (alphabet.indexOf(lowerGuess) > -1 && lettersGuessed.indexOf(lowerGuess) === -1 && numGuesses > 0 && checkForBlanks(secretwordArray) === true) { //only does game stuff if the key pressed is an alphabet key that has not already been guessed, and the user still has guesses left, and there are still blanks in the secret word array
-        if (secretword.indexOf(lowerGuess) > -1) { //if the guessed letter is in the secret word
-        	console.log("yes");
-        	console.log(secretword);
-        	console.log(secretword[0]);
-        	console.log(secretwordArray);
-            for (i = 0; i < secretword.length; i++) {
-                if (secretword[i] === lowerGuess) {
-                	console.log(secretword[i]);
-                    secretwordArray[i] = lowerGuess; //replace spaces in array of blanks with the letter
-                    console.log(secretwordArray);
                 }
 
+
+                lettersGuessed.push(lowerGuess);
+                lettersGuessed.sort();
+                console.log(lettersGuessed);
+
+
+                $("#currentWord").html("Current Word: " + "<br> <br> <br>" + secretwordArray.join(" ")); //display updated blanks array
+                $("#lettersGuessed").html("Letters Guessed: " + "<br><br><br>" + lettersGuessed.join(" ")); //display updated letters guessed array
+
+
+            } else { //if the guessed letter is not in the secret word
+
+                console.log("no");
+
+                numGuesses = numGuesses - 1;
+                $("#guessesRemaining").html("Guesses Remaining: " + numGuesses); //display updated number of guesses
+                lettersGuessed.push(lowerGuess);
+                lettersGuessed.sort();
+                console.log(lettersGuessed);
+                $("#lettersGuessed").html("Letters Guessed: " + "<br><br><br>" + lettersGuessed.join(" ")); //display updated letters guessed array
             }
 
 
-            lettersGuessed.push(lowerGuess);
-            lettersGuessed.sort();
-            console.log(lettersGuessed);
-
-
-            $("#currentWord").html("Current Word: " + "<br> <br> <br>" + secretwordArray.join(" ")); //display updated blanks array
-            $("#lettersGuessed").html("Letters Guessed: " + "<br><br><br>" + lettersGuessed.join(" ")); //display updated letters guessed array
-
-
-        } else { //if the guessed letter is not in the secret word
-
-        	console.log("no");
-
-            numGuesses = numGuesses - 1;
-            $("#guessesRemaining").html("Guesses Remaining: " + numGuesses); //display updated number of guesses
-            lettersGuessed.push(lowerGuess);
-            lettersGuessed.sort();
-            console.log(lettersGuessed);
-            $("#lettersGuessed").html("Letters Guessed: " + "<br><br><br>" + lettersGuessed.join(" ")); //display updated letters guessed array
         }
 
-
     }
-
- }
 
     function gameEnd() {
 
@@ -164,9 +161,9 @@ document.onkeyup = function(event) {
     }
 
     if (numGuesses === 0) { //game over, user loses
-    	console.log("it's a loss");
-        $("#lastgameOutcome").html("Outcome of Last Game:" + "<br><br><br>"+ "You Lost! Secret word was " + secretword);
-        $("#relevantImg").html("<img src = '" +getCorrespondingImage(imageArray)+"'alt = 'secret word image'>");
+        console.log("it's a loss");
+        $("#lastgameOutcome").html("Outcome of Last Game:" + "<br><br><br>" + "You Lost! Secret word was " + secretword);
+        $("#relevantImg").html("<img src = '" + getCorrespondingImage(imageArray) + "'alt = 'secret word image'>");
         gameEnd(); //auto restart game on loss
         // playGame();
         chooseNewWord();
@@ -175,9 +172,9 @@ document.onkeyup = function(event) {
     }
 
     if (checkForBlanks(secretwordArray) === false) { //game over, user wins
-    	console.log("it's a win");
-        $("#lastgameOutcome").html("Outcome of Last Game:" + "<br><br><br>"+"You Won! Secret word was " + secretword);
-        $("#relevantImg").html("<img src = '" +getCorrespondingImage(imageArray)+"' alt = 'secret word image'>");
+        console.log("it's a win");
+        $("#lastgameOutcome").html("Outcome of Last Game:" + "<br><br><br>" + "You Won! Secret word was " + secretword);
+        $("#relevantImg").html("<img src = '" + getCorrespondingImage(imageArray) + "' alt = 'secret word image'>");
         numWins = numWins + 1;
         $("#numWins").html("Wins: " + numWins);
         gameEnd(); //auto restart game on win

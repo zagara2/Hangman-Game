@@ -1,86 +1,60 @@
 <!DOCTYPE html>
 <html lang="en-us">
+
 <head>
-	<meta charset="UTF-8">
-	<title>FLCL Hangman</title>
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
-	<link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<!-- <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>FLCL Hangman</title>
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"> -->
+    <link href="https://fonts.googleapis.com/css?family=Rubik+Mono+One" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Russo+One" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=VT323" rel="stylesheet"> -->
-
-	<script src="https://code.jquery.com/jquery-3.1.1.js"></script>
-	<link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.js"></script>
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
 </head>
+
 <body>
-<audio controls loop id = "advicesong">
-
-  <source src="assets/music/advice.mp3" type="audio/mpeg">
-
-</audio>
-
-
-
-
-<div id = "bigtitle">
-
-<img src = "assets/images/logotransparent2.png" alt = "FLCL Logo">
-<br>
-<div id = "headingtext">
-HANGMAN
-</div>
-
-</div>
-
-<div id = "pressanykey">
-<div id = "pak1">
-Press any key to get started!
-</div>
-<div id = "pak2">
-(If your intial key press is a letter, don't worry, it will not count as a guess.)
-</div>
-</div>
-
-<div class = "gamedata1">
-
-
-<div class = "innerbox" id = "numWins">
-Wins:
-
-</div>
-
-<div class = "innerbox" id = "currentWord">
-Current Word: 
-
-</div>
-
-<div class = "innerbox" id = "guessesRemaining">
-Guesses Remaining: 
-</div>
-
-<div class = "innerbox" id = "lettersGuessed">
-Letters Guessed: 
-</div>
-
-</div>
-
-<div class = "gamedata2">
-
-<div class = "innerbox" id = "lastgameOutcome">
-
-
-
-</div>
-<div id = "relevantImg">
-<img src = "assets/images/initialcanti.png" alt = "Canti the Robot">
-</div>
-</div>
-
-
-
-
-<script type="text/javascript" src="assets/javascript/game.js"></script>
-
+    <audio controls loop id="advicesong">
+        <source src="assets/music/advice.mp3" type="audio/mpeg">
+    </audio>
+    <div id="bigtitle">
+        <img src="assets/images/logotransparent2.png" alt="FLCL Logo">
+        <br>
+        <div id="headingtext">
+            HANGMAN
+        </div>
+    </div>
+    <div id="pressanykey">
+        <div id="pak1">
+            Press any key to get started!
+        </div>
+        <div id="pak2">
+            (If your intial key press is a letter, don't worry, it will not count as a guess.)
+        </div>
+    </div>
+    <div class="gamedata1">
+        <div class="innerbox" id="numWins">
+            Wins:
+        </div>
+        <div class="innerbox" id="currentWord">
+            Current Word:
+        </div>
+        <div class="innerbox" id="guessesRemaining">
+            Guesses Remaining:
+        </div>
+        <div class="innerbox" id="lettersGuessed">
+            Letters Guessed:
+        </div>
+    </div>
+    <div class="gamedata2">
+        <div class="innerbox" id="lastgameOutcome">
+        </div>
+        <div id="relevantImg">
+            <img src="assets/images/initialcanti.png" alt="Canti the Robot">
+        </div>
+    </div>
+    <script type="text/javascript" src="assets/javascript/game.js"></script>
 </body>
+
 </html>
