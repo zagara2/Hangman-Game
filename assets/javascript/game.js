@@ -95,6 +95,7 @@ document.onkeyup = function(event) {
         $("#guessesRemaining").html("Guesses Remaining: " + numGuesses);
         $("#numWins").html("Wins: " + numWins);
         GAME_STATE = true;
+        document.getElementById('advicesong').play();
 
 
     }
