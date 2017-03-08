@@ -82,6 +82,9 @@ document.onkeyup = function(event) {
         secretword = getWord(possibleWords);
         secretwordArray = generateBlanks(secretword);
         $("#currentWord").html("Current Word: " + "<br>" + secretwordArray.join(" "));
+        $("#lettersGuessed").html("Letters Guessed: " + "<br>" + lettersGuessed.join(" "));
+        $("#guessesRemaining").html("Guesses Remaining: " + numGuesses);
+        $("#numWins").html("Wins: " + numWins);
         GAME_STATE = true;
 
 
@@ -135,7 +138,7 @@ document.onkeyup = function(event) {
     function gameEnd() {
 
         numGuesses = 10;
-        $("#guessesRemaining").html("Guesses Remaining: " + "<br>" + numGuesses);
+        $("#guessesRemaining").html("Guesses Remaining: " + numGuesses);
         lettersGuessed = [];
         $("#lettersGuessed").html("Letters Guessed: " + "<br>" + lettersGuessed.join(" "));
         //$("#gameOutcome").empty();
