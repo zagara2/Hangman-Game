@@ -124,6 +124,8 @@ document.onkeyup = function(event) {
 
 
             lettersGuessed.push(lowerGuess);
+            lettersGuessed = lettersGuessed.sort();
+            console.log(lettersGuessed);
 
 
             $("#currentWord").html("Current Word: " + "<br> <br> <br>" + secretwordArray.join(" ")); //display updated blanks array
@@ -137,6 +139,8 @@ document.onkeyup = function(event) {
             numGuesses = numGuesses - 1;
             $("#guessesRemaining").html("Guesses Remaining: " + numGuesses); //display updated number of guesses
             lettersGuessed.push(lowerGuess);
+            lettersGuessed = lettersGuessed.sort();
+            console.log(lettersGuessed);
             $("#lettersGuessed").html("Letters Guessed: " + "<br><br><br>" + lettersGuessed.join(" ")); //display updated letters guessed array
         }
 
