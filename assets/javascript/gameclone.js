@@ -1,3 +1,6 @@
+
+
+
 var possibleWords = ["vespa", "takkun", "mamimi", "haruko", "canti", "atomsk", "guitar", "alien", "ninamori", "baseball", "robot", "cat", "curry", "amarao", "bakery", "mabase", "kamon", "naota", "camera"];
 var numGuesses = 10;
 var numWins = 0;
@@ -141,7 +144,7 @@ document.onkeyup = function(event) {
         //$("#gameOutcome").empty();
         console.log("game is over");
 
-        //GAME_STATE = false;
+        GAME_STATE = false;
 
 
     }
@@ -167,3 +170,5 @@ document.onkeyup = function(event) {
     }
 
 }
+// }
+// playGame();
