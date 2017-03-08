@@ -81,3 +81,9 @@ body {
 	padding:40px;
 
 }
+
+#relevantImg img {
+	
+	max-width:350px;
+	max-height: 300px;
+}

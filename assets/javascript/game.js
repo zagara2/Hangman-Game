@@ -6,15 +6,24 @@ var alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m",
 var GAME_STATE = false;
 var secretword;
 var secretwordArray;
+var secretWordIndex;
+var imageArray = ["assets/images/vespa.png", "assets/images/takkun.jpg", "assets/images/mamimi.jpg", "assets/images/haruko.jpg", "assets/images/canti.jpg", "assets/images/atomsk.jpg", "assets/images/guitar.jpg", "assets/images/mechanica.png", "assets/images/ninamori2.jpg", "assets/images/baseball.jpg", "assets/images/robot.jpg", "assets/images/cat.jpg", "assets/images/miyumiyu.jpg", "assets/images/curry.jpg", "assets/images/amarao.jpg", "assets/images/kitsurubami.png", "assets/images/mabase.jpg", "assets/images/kamon.jpg", "assets/images/naota.jpg", "assets/images/camera.png"];
 
 
 
 //get a random word from the posible choices
 function getWord(myArray) {
-    var rand = myArray[Math.floor(Math.random() * myArray.length)];
+	secretWordIndex  = Math.floor(Math.random() * myArray.length);
+    //var rand = myArray[Math.floor(Math.random() * myArray.length)];
+    var rand = myArray[secretWordIndex];
     return rand;
 }
 
+function getCorrespondingImage(myArray) {
+	var myimg = myArray[secretWordIndex];
+	return myimg;
+
+}
 
 //generate an array of blanks the same length as a given word
 function generateBlanks(myWord) {
@@ -152,6 +161,7 @@ document.onkeyup = function(event) {
     if (numGuesses === 0) { //game over, user loses
     	console.log("it's a loss");
         $("#lastgameOutcome").html("Outcome of Last Game:" + "<br><br><br>"+ "You Lost! Secret word was " + secretword);
+        $("#relevantImg").html("<img src = '" +getCorrespondingImage(imageArray)+"'>");
         gameEnd(); //auto restart game on loss
         // playGame();
         chooseNewWord();
@@ -162,6 +172,7 @@ document.onkeyup = function(event) {
     if (checkForBlanks(secretwordArray) === false) { //game over, user wins
     	console.log("it's a win");
         $("#lastgameOutcome").html("Outcome of Last Game:" + "<br><br><br>"+"You Won! Secret word was " + secretword);
+        $("#relevantImg").html("<img src = '" +getCorrespondingImage(imageArray)+"'>");
         numWins = numWins + 1;
         $("#numWins").html("Wins: " + numWins);
         gameEnd(); //auto restart game on win
