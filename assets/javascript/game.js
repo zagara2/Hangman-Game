@@ -42,7 +42,7 @@ function checkForBlanks(myArray) {
 function chooseNewWord() {
 secretword = getWord(possibleWords);
         secretwordArray = generateBlanks(secretword);
-        $("#currentWord").html("Current Word: " + "<br>" + secretwordArray.join(" "));
+        $("#currentWord").html("Current Word: " + "<br> <br> <br>" + secretwordArray.join(" "));
 }
 // game init
 //     ((player moves))
@@ -81,8 +81,8 @@ document.onkeyup = function(event) {
 
         secretword = getWord(possibleWords);
         secretwordArray = generateBlanks(secretword);
-        $("#currentWord").html("Current Word: " + "<br>" + secretwordArray.join(" "));
-        $("#lettersGuessed").html("Letters Guessed: " + "<br>" + lettersGuessed.join(" "));
+        $("#currentWord").html("Current Word: " + "<br> <br> <br>" + secretwordArray.join(" "));
+        $("#lettersGuessed").html("Letters Guessed: " + "<br><br><br>" + lettersGuessed.join(" "));
         $("#guessesRemaining").html("Guesses Remaining: " + numGuesses);
         $("#numWins").html("Wins: " + numWins);
         GAME_STATE = true;
@@ -116,8 +116,8 @@ document.onkeyup = function(event) {
             lettersGuessed.push(lowerGuess);
 
 
-            $("#currentWord").html("Current Word: " + "<br>" + secretwordArray.join(" ")); //display updated blanks array
-            $("#lettersGuessed").html("Letters Guessed: " + "<br>" + lettersGuessed.join(" ")); //display updated letters guessed array
+            $("#currentWord").html("Current Word: " + "<br> <br> <br>" + secretwordArray.join(" ")); //display updated blanks array
+            $("#lettersGuessed").html("Letters Guessed: " + "<br><br><br>" + lettersGuessed.join(" ")); //display updated letters guessed array
 
 
         } else { //if the guessed letter is not in the secret word
@@ -127,7 +127,7 @@ document.onkeyup = function(event) {
             numGuesses = numGuesses - 1;
             $("#guessesRemaining").html("Guesses Remaining: " + numGuesses); //display updated number of guesses
             lettersGuessed.push(lowerGuess);
-            $("#lettersGuessed").html("Letters Guessed: " + "<br>" + lettersGuessed.join(" ")); //display updated letters guessed array
+            $("#lettersGuessed").html("Letters Guessed: " + "<br><br><br>" + lettersGuessed.join(" ")); //display updated letters guessed array
         }
 
 
@@ -140,7 +140,7 @@ document.onkeyup = function(event) {
         numGuesses = 10;
         $("#guessesRemaining").html("Guesses Remaining: " + numGuesses);
         lettersGuessed = [];
-        $("#lettersGuessed").html("Letters Guessed: " + "<br>" + lettersGuessed.join(" "));
+        $("#lettersGuessed").html("Letters Guessed: " + "<br><br><br>" + lettersGuessed.join(" "));
         //$("#gameOutcome").empty();
         console.log("game is over");
 
@@ -151,7 +151,7 @@ document.onkeyup = function(event) {
 
     if (numGuesses === 0) { //game over, user loses
     	console.log("it's a loss");
-        $("#lastgameOutcome").html("Previous Game Outcome:" + "<br>"+ "You Lost! Secret word was " + secretword);
+        $("#lastgameOutcome").html("Outcome of Last Game:" + "<br><br><br>"+ "You Lost! Secret word was " + secretword);
         gameEnd(); //auto restart game on loss
         // playGame();
         chooseNewWord();
@@ -161,7 +161,7 @@ document.onkeyup = function(event) {
 
     if (checkForBlanks(secretwordArray) === false) { //game over, user wins
     	console.log("it's a win");
-        $("#lastgameOutcome").html("Previous Game Outcome:" + "<br>"+"You Won! Secret word was " + secretword);
+        $("#lastgameOutcome").html("Outcome of Last Game:" + "<br><br><br>"+"You Won! Secret word was " + secretword);
         numWins = numWins + 1;
         $("#numWins").html("Wins: " + numWins);
         gameEnd(); //auto restart game on win
