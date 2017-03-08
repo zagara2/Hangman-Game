@@ -1,0 +1,45 @@
+body {
+	background: url("../images/background1.jpg");
+	
+	
+}
+
+
+#bigtitle {
+	font-family: 'Rubik Mono One', sans-serif;
+	color:black;
+	letter-spacing: 50px;
+	font-size:32px;
+
+}
+
+#bigtitle img {
+	height:220px;
+	width:500px;
+	clear:both;
+	margin-left:350px;
+	margin-top:30px;
+}
+
+#headingtext {
+	margin-left:350px;
+	margin-top:20px;
+
+}
+
+#pak1{
+	margin-top:30px;
+	margin-left:300px;
+	font-family: 'Rubik Mono One', sans-serif;
+	color:black;
+	font-size:25px;
+}
+
+#pak2 {
+	margin-left:200px;
+	margin-top: 20px;
+	font-family: 'Rubik Mono One', sans-serif;
+	color:black;
+	font-size:12px;
+
+}
