@@ -1,4 +1,4 @@
-var possibleWords = ["vespa", "takkun", "mamimi", "haruko", "canti", "atomsk", "guitar", "alien", "ninamori", "baseball", "robot", "cat", "curry", "amarao", "bakery", "mabase", "kamon", "naota", "camera"];
+var possibleWords = ["vespa", "takkun", "mamimi", "haruko", "canti", "atomsk", "guitar", "mechanica", "ninamori", "baseball", "robot", "cat", "miyumiyu", "curry", "amarao", "kitsurubami", "mabase", "kamon", "naota", "camera"];
 var numGuesses = 10;
 var numWins = 0;
 var lettersGuessed = [];
