@@ -45,7 +45,7 @@ The site is "fool proofed" to prevent users from double-guessing letters, or gue
 ## Future Plans for Improvement
  * The game is not currently playable on a smartphone, since the keyboard does not automatically come up when the site opens, so users cannot type letters to make guesses. I plan to fix this issue by adding alphabet buttons to the mobile version of the site, so that users can press those to make guesses. 
 
- * Tweak the background image so that its right side does not get cut off on certain screen sizes (I have tried messing around with this already, and it is a more complicated task than it would initially seem).
+ * Tweak the background image for the desktop/notebook layout so that its right side does not get cut off on certain screen sizes (I have tried messing around with this already, and it is a more complicated task than it would initially seem).
 
  * Fix the minor Safari bug.
 
