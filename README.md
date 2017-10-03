@@ -24,7 +24,7 @@ It works perfectly on every browser listed except Safari. However, the Safari bu
 
 ### Screen Compatibility Tests
 
-The site is best viewed on a large desktop (1680x1050 and up). However, it looks okay on smaller desktop and notebook screens, it's just that the right side of the background image gets cropped out somewhat. I have media queries in place which give the site a different format on smaller screens, which eliminates the issue of the background image on certain devices. 
+The site is best viewed on a large desktop (1680x1050 and up). However, it looks okay on smaller desktop and notebook screens, it's just that the right side of the background image gets cropped out somewhat. I have media queries in place which give the site a different format on mobile/tablet screens, which eliminates the issue of the background image on certain devices. 
 
 A full list of devices that the site displays decently on includes a 10"-12" Netbook, a 13"-15" notebook, 19"-24" desktops, Kindle Fire, Asus Nexus 7, iPad and iPad Pro, Samsung Galaxy tab, Microsoft Surface Pro, iPhone 3 and up (including iPhone 6-7 plus), Galaxy S2 and up, LG G 3-5, and 480p, 720p and 1080p televisions.
 
@@ -35,6 +35,8 @@ Here is the desktop layout of the site, as it should look when loaded properly:
 Here is the mobile/tablet layout of the site, as it should look when loaded properly:
 
 ![Mobile/Tablet Layout](/assets/images/mobile.JPG)
+
+**(top part of page; rest of page is visible if one keeps scrolling)**
 
 ## The Site in Action
 
